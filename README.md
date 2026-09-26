@@ -2,7 +2,10 @@
 
 Manuales gratuitos de Germán Talón. Sitio estático hecho con [Astro](https://astro.build) y [Starlight](https://starlight.astro.build).
 
-Primer manual: [Manual de desarrollo moderno con IA](https://lab.germantalon.com/desarrollo-con-ia/).
+Manuales:
+
+- [Manual de desarrollo moderno con IA](https://lab.germantalon.com/desarrollo-con-ia/)
+- [De la transformación digital al comercio unificado](https://lab.germantalon.com/dirigir-tecnologia-retail/)
 
 ## En local
 
