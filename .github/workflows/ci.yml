@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - uses: actions/upload-artifact@v7
+        with:
+          name: dist
+          path: dist
+
+  enlaces:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/download-artifact@v8
+        with:
+          name: dist
+          path: dist
+      - uses: lycheeverse/lychee-action@v2
+        with:
+          args: --config lychee.toml --root-dir ${{ github.workspace }}/dist --no-progress 'dist/**/*.html'
+          fail: true
+
+  estilo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Sin guiones largos en src/content/
+        run: |
+          if grep -rn '—' src/content/; then
+            echo "::error::Hay guiones largos (—) en src/content/. Sustitúyelos."
+            exit 1
+          fi

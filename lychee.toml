@@ -1,0 +1,21 @@
+# Comprobación de enlaces sobre el sitio construido (dist/).
+# root_dir se pasa por línea de comandos porque debe ser una ruta absoluta.
+
+# Resuelve /ruta/ a /ruta/index.html.
+index_files = ["index.html"]
+
+max_retries = 3
+retry_wait_time = 2
+timeout = 20
+
+# Códigos aceptados además de 2xx. 429 = límite de peticiones.
+accept = ["200..=299", "429"]
+
+exclude = [
+  # Las URL absolutas del propio sitio (canonical, og:image, sitemap) apuntan a
+  # producción, que va por detrás de cada PR. Los enlaces internos ya se
+  # comprueban como ficheros locales.
+  '^https://lab\.germantalon\.com',
+]
+
+exclude_loopback = true
