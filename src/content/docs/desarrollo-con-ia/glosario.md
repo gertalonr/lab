@@ -22,3 +22,5 @@ sidebar:
 | Repositorio | Carpeta de proyecto con todo su historial en git |
 | SDD | Spec-Driven Development: especificar antes de que el agente programe |
 | Workflow | Fichero YAML que define una automatización de GitHub Actions |
+
+Línea de prueba — con guion largo.
