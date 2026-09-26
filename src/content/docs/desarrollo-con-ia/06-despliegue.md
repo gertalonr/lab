@@ -1,7 +1,7 @@
 ---
-title: Claude Code
+title: "Desplegar en Cloudflare Pages"
 description: Capítulo en preparación.
 draft: true
 sidebar:
-  order: 4
+  order: 6
 ---

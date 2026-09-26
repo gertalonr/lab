@@ -1,4 +1,4 @@
-# lab.germantalon.com
+# Germán Talón Lab
 
 Manuales gratuitos de Germán Talón. Sitio estático hecho con [Astro](https://astro.build) y [Starlight](https://starlight.astro.build).
 
