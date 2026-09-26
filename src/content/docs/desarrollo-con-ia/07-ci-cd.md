@@ -1,5 +1,5 @@
 ---
-title: CI/CD
+title: "CI/CD con GitHub Actions"
 description: Capítulo en preparación.
 draft: true
 sidebar:

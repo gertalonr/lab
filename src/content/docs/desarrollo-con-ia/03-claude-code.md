@@ -1,7 +1,7 @@
 ---
-title: Git
+title: "Claude y Claude Code"
 description: Capítulo en preparación.
 draft: true
 sidebar:
-  order: 2
+  order: 3
 ---

@@ -1,7 +1,7 @@
 ---
-title: Pruebas
+title: "Git y GitHub"
 description: Capítulo en preparación.
 draft: true
 sidebar:
-  order: 6
+  order: 2
 ---

@@ -10,7 +10,7 @@ export default defineConfig({
 	site,
 	integrations: [
 		starlight({
-			title: 'Manuales de Germán Talón',
+			title: 'Germán Talón Lab',
 			description: 'Manuales gratuitos de Germán Talón sobre desarrollo de software.',
 			locales: {
 				root: { label: 'Español', lang: 'es' },

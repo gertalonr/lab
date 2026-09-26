@@ -2,6 +2,7 @@
 title: Manual de desarrollo moderno con IA
 description: Cómo se desarrolla software hoy con git, GitHub, Docker, SDD, CI/CD y Claude, para quien programó hace años.
 sidebar:
+  label: Introducción
   order: 0
 ---
 

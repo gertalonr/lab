@@ -31,6 +31,19 @@ src/content/docs/
 
 La barra lateral tiene un grupo por manual, generado desde su carpeta.
 
+Capítulos del primer manual, en este orden:
+
+| Fichero | Título |
+|---|---|
+| `01-entorno.md` | El entorno de trabajo |
+| `02-git-github.md` | Git y GitHub |
+| `03-claude-code.md` | Claude y Claude Code |
+| `04-sdd.md` | SDD, especificar antes de programar |
+| `05-web-estatica.md` | Tu web, un index.html estático |
+| `06-despliegue.md` | Desplegar en Cloudflare Pages |
+| `07-ci-cd.md` | CI/CD con GitHub Actions |
+| `08-docker.md` | Docker (de aprendizaje: en este proyecto no hace falta) |
+
 ## Lectura
 
 - Idioma del sitio: español (`lang="es"`).
