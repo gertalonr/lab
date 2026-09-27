@@ -1,6 +1,8 @@
 ---
 title: Tecnología, digitalización y transformación
 description: En qué fase está cada área de un retailer y por qué no conviene financiar la tercera sin haber resuelto las dos primeras.
+publicado: 2026-09-26
+revisado: 2026-09-26
 sidebar:
   order: 1
 ---
@@ -80,7 +82,5 @@ Siete preguntas para la próxima reunión. No hace falta saber de tecnología pa
 5. ¿Qué proceso hemos rediseñado, y no solo digitalizado, en los últimos doce meses?
 6. ¿Quién de negocio responde de cada iniciativa, además de tecnología?
 7. ¿Llegamos a las fechas regulatorias como una mejora de proceso o como un trámite?
-
-*Revisado en septiembre de 2026.*
 
 Y si después de hacerlas te apetece contrastar las respuestas con alguien de fuera, con un café de por medio, escríbeme a cafe@germantalon.com.

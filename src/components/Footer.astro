@@ -1,0 +1,68 @@
+---
+import Default from '@astrojs/starlight/components/Footer.astro';
+
+// Pie de autoría y licencia, solo en el manual de retail. Se genera desde los
+// campos publicado, revisado y revision_experta del frontmatter.
+const MANUAL = 'dirigir-tecnologia-retail';
+
+const { entry } = Astro.locals.starlightRoute;
+const { publicado, revisado, revision_experta, draft } = entry.data;
+const enManual = entry.id === MANUAL || entry.id.startsWith(`${MANUAL}/`);
+
+if (enManual && !draft && (!publicado || !revisado)) {
+	throw new Error(
+		`${entry.filePath ?? entry.id}: faltan "publicado" o "revisado" en el frontmatter. Son obligatorios en las páginas publicadas del manual.`,
+	);
+}
+
+// YAML da las fechas a medianoche UTC; sin timeZone podrían salir con un día menos.
+const fecha = new Intl.DateTimeFormat('es-ES', { dateStyle: 'long', timeZone: 'UTC' });
+const mesAnio = new Intl.DateTimeFormat('es-ES', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+---
+
+{
+	enManual && publicado && revisado && (
+		<div class="autoria">
+			<p>
+				© {publicado.getUTCFullYear()}{' '}
+				<a href="https://www.linkedin.com/in/germantalonr/" rel="author">
+					Germán Talón Ramírez
+				</a>{' '}
+				· Primera versión: {fecha.format(publicado)} · Última revisión: {mesAnio.format(revisado)}
+			</p>
+			{revision_experta && (
+				<p>
+					Revisión experta: <a href={revision_experta.linkedin}>{revision_experta.nombre}</a>
+				</p>
+			)}
+			<p>
+				Puedes copiar y compartir este texto todo lo que quieras, con una sola condición que no es
+				mucho pedir: cita al autor y enlaza esta página. Sin uso comercial y sin modificar el texto.{' '}
+				<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.es" rel="license">
+					Licencia CC BY-NC-ND 4.0
+				</a>
+				.
+			</p>
+		</div>
+	)
+}
+<Default />
+
+<style>
+	.autoria {
+		margin-top: 3rem;
+		padding-top: 1rem;
+		border-top: 1px solid var(--sl-color-hairline);
+		font-size: var(--sl-text-sm);
+		color: var(--sl-color-gray-3);
+	}
+	.autoria p + p {
+		margin-top: 0.5rem;
+	}
+	.autoria a {
+		color: var(--sl-color-gray-2);
+	}
+	.autoria a:hover {
+		color: var(--sl-color-white);
+	}
+</style>

@@ -53,7 +53,7 @@ Siete apartados fijos, en este orden:
 6. Errores frecuentes: qué sale mal, cómo se ve venir y cómo evitarlo.
 7. Preguntas para el comité: entre cinco y ocho.
 
-Al final, una línea "Revisado en" con mes y año y una línea de contacto (cafe@germantalon.com).
+Al final, una línea de contacto (cafe@germantalon.com). La autoría, las fechas de primera versión y última revisión y la licencia las pone el pie de página a partir del frontmatter (`publicado`, `revisado` y `revision_experta`).
 
 ## Estilo
 
