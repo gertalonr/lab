@@ -1,6 +1,8 @@
 ---
 title: De la transformación digital al comercio unificado
 description: Dirigir un retailer en la era de la IA. Manual para CIO, CTO y CEO de retail mediano.
+publicado: 2026-09-26
+revisado: 2026-09-26
 sidebar:
   label: Introducción
   order: 0

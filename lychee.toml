@@ -16,6 +16,8 @@ exclude = [
   # producción, que va por detrás de cada PR. Los enlaces internos ya se
   # comprueban como ficheros locales.
   '^https://lab\.germantalon\.com',
+  # LinkedIn responde con errores (999) a las peticiones automáticas.
+  '^https?://([a-z]+\.)?linkedin\.com',
 ]
 
 exclude_loopback = true

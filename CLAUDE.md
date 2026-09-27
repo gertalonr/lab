@@ -9,6 +9,7 @@ Sitio estático con los manuales gratuitos de Germán Talón, publicado en `lab.
 - Si el manual tiene partes, cada parte es una subcarpeta (`dirigir-tecnologia-retail/estrategia/`) y la parte forma parte de la URL.
 - `astro.config.mjs`: un grupo de barra lateral por manual, generado desde su carpeta, o un subgrupo por parte generado desde cada subcarpeta.
 - `src/routeData.ts`: quita de la barra lateral los grupos vacíos, como una parte con todos sus capítulos en borrador.
+- `src/components/Footer.astro`: pie de autoría y licencia del manual de retail, generado desde el frontmatter. Los campos están en `src/content.config.ts`.
 - `public/og.png`: imagen Open Graph (1200×630). Se regenera con `npm run og` desde `scripts/og.mjs`.
 
 ## Reglas comunes
@@ -97,6 +98,11 @@ Partes y subcarpetas: `estrategia/` (1), `que-construir/` (2 a 7), `como-ejecuta
 title: Título del capítulo
 description: Una frase que resume la decisión del capítulo.
 draft: true
+publicado: AAAA-MM-DD
+revisado: AAAA-MM-DD
+revision_experta: # opcional
+  nombre: Nombre Apellidos
+  linkedin: https://www.linkedin.com/in/slug/
 sidebar:
   order: N
 ---
@@ -133,12 +139,20 @@ Qué sale mal, cómo se ve venir y cómo evitarlo.
 
 Entre cinco y ocho, numeradas.
 
-*Revisado en <mes> de <año>.*
-
 Línea de contacto, una sola y sin tono comercial, con cafe@germantalon.com.
 ```
 
 Los siete apartados van siempre, en este orden. `estrategia/01-tecnologia-digitalizacion-transformacion.md` es el ejemplo de referencia.
+
+### Pie de autoría y fechas
+
+- Cada capítulo nuevo lleva `publicado` (fecha de la primera versión), `revisado` (fecha de la última revisión) y, si hubo revisión experta, `revision_experta` con `nombre` y `linkedin`.
+- `publicado` y `revisado` son obligatorios al quitar `draft`: si falta alguno, `npm run build` falla.
+- `revisado` se actualiza en cada cambio de contenido (no en cambios de formato o de frontmatter).
+- No escribas a mano la línea "Revisado en" ni la licencia: las pone el pie (`src/components/Footer.astro`).
+- La primera mención de Germán Talón o de Irene Martín Javaloy en cada página enlaza a su LinkedIn.
+- Las URL con tildes van codificadas (por ejemplo, `%C3%AD` en lugar de `í`).
+- lychee no comprueba los enlaces a linkedin.com (responde con errores a las peticiones automáticas): revísalos a mano.
 
 ### Criterios de terminado
 
